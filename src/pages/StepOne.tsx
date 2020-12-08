@@ -1,7 +1,13 @@
 import React from 'react';
+import Header from '../components/Header';
 
 function StepOne() {
-  return <h1>Step One</h1>;
+  return (
+    <main>
+      <Header />
+      <h1>Step One</h1>
+    </main>
+  );
 }
 
 export default StepOne;
