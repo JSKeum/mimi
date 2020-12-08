@@ -32,4 +32,15 @@ const stepOne = [
   },
 ];
 
+export const choices = [
+  {
+    description: '선택 1',
+    choiceImageUrl: 'step_one_choice_one.png',
+  },
+  {
+    description: '선택 2',
+    choiceImageUrl: 'step_one_choice_two.png',
+  },
+];
+
 export default stepOne;
