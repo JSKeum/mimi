@@ -1,4 +1,6 @@
 import React from 'react';
+import { CSSTransition } from 'react-transition-group';
+import LazyLoad from 'react-lazyload';
 import Header from '../components/Header';
 import IllustrationImage from '../components/IllustrationImage';
 import Description from '../components/Description';
@@ -11,10 +13,17 @@ function StepOne() {
       <Header />
       <div className={styles.stepWrapper}>
         {stepOne.map((scene) => (
-          <section className={styles.illustrationDescriptionWrapper} style={{ flexDirection: scene.orderReverse ? 'row-reverse' : 'row' }}>
-            <IllustrationImage imageUrl={scene.illustrationImageUrl} />
-            <Description description={scene.description} />
-          </section>
+          <LazyLoad height={800}>
+            <CSSTransition
+              classNames="illustarionSection"
+              timeout={{ enter: 1000, exit: 800 }}
+            >
+              <section className={styles.illustrationDescriptionWrapper} style={{ flexDirection: scene.orderReverse ? 'row-reverse' : 'row' }}>
+                <IllustrationImage imageUrl={scene.illustrationImageUrl} />
+                <Description description={scene.description} />
+              </section>
+            </CSSTransition>
+          </LazyLoad>
         ))}
       </div>
     </main>
