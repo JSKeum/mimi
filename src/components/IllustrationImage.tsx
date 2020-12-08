@@ -1,5 +1,5 @@
-/* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 import React from 'react';
 import styles from './IllustrationImage.module.scss';
 
@@ -9,14 +9,10 @@ interface Props {
 
 function IllustrationImage(props: Props) {
   const { imageUrl } = props;
-  console.log(imageUrl);
-  const url = require('../assets/step_one_scene_one.png');
+  const url = require(`../assets/${imageUrl}`);
 
   return (
-    <>
-      <div className={styles.illustrationImage} style={{ backgroundImage: url }} />
-      <img src={url} alt="asdasd" />
-    </>
+    <img className={styles.IllustrationImage} src={url} alt="" />
   );
 }
 
