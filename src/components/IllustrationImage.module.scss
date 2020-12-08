@@ -1,0 +1,9 @@
+$ILLUSTARTIONIMAGEWIDTH: 40vw;
+
+.illustrationImage {
+    width: $ILLUSTARTIONIMAGEWIDTH;
+    height: auto;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
