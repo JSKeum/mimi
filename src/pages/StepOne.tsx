@@ -2,7 +2,6 @@
 /* eslint-disable global-require */
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
-import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import IllustrationImage from '../components/IllustrationImage';
@@ -16,17 +15,15 @@ function StepOne() {
       <Header />
       <div className={styles.stepWrapper}>
         {stepOne.map((scene) => (
-          <LazyLoad height={800}>
-            <CSSTransition
-              classNames={styles.illustarionSection}
-              timeout={{ enter: 1000, exit: 800 }}
-            >
-              <section className={styles.illustrationDescriptionWrapper} style={{ flexDirection: scene.orderReverse ? 'row-reverse' : 'row' }}>
-                <IllustrationImage imageUrl={scene.illustrationImageUrl} />
-                <Description description={scene.description} />
-              </section>
-            </CSSTransition>
-          </LazyLoad>
+          <CSSTransition
+            classNames={styles.illustarionSection}
+            timeout={{ enter: 1000, exit: 800 }}
+          >
+            <section className={styles.illustrationDescriptionWrapper} style={{ flexDirection: scene.orderReverse ? 'row-reverse' : 'row' }}>
+              <IllustrationImage imageUrl={scene.illustrationImageUrl} />
+              <Description description={scene.description} />
+            </section>
+          </CSSTransition>
         ))}
         <div className={styles.choiceWrapper}>
           {choices.map((choice) => (
