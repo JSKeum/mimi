@@ -9,7 +9,13 @@ interface Props {
 
 function IllustrationImage(props: Props) {
   const { imageUrl } = props;
-  const url = require(`../assets/${imageUrl}`);
+  let url = '';
+
+  if (imageUrl !== '') {
+    url = require(`../assets/${imageUrl}`);
+  } else {
+    url = '';
+  }
 
   return (
     <img className={styles.IllustrationImage} src={url} alt="" />

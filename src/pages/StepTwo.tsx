@@ -1,13 +1,12 @@
-/* eslint-disable import/no-dynamic-require */
-/* eslint-disable global-require */
 import React, { useEffect } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import IllustrationImage from '../components/IllustrationImage';
-import Description from '../components/Description';
-import stepTwo, { choices } from '../stories/StepTwo';
 import styles from './Step.module.scss';
+
+import mimi010 from '../assets/mimi-010.png';
+import mimi011 from '../assets/mimi-011.png';
+import mimi012 from '../assets/mimi-012.png';
+import mimi013 from '../assets/mimi-013-select-1.png';
 
 function StepTwo() {
   useEffect(() => {
@@ -16,28 +15,12 @@ function StepTwo() {
   return (
     <main>
       <Header />
-      <CSSTransition
-        classNames={styles.illustarionSection}
-        timeout={{ enter: 10000, exit: 800 }}
-      >
-        <div className={styles.stepWrapper}>
-          {stepTwo.map((scene) => (
-            <section className={styles.illustrationDescriptionWrapper} style={{ flexDirection: scene.orderReverse ? 'row-reverse' : 'row' }}>
-              <IllustrationImage imageUrl={scene.illustrationImageUrl} />
-              <Description description={scene.description} />
-            </section>
-          ))}
-          <div className={styles.choiceWrapper}>
-            {choices.map((choice) => (
-              <Link to="/steptwo">
-                <img className={styles.choice} src={require(`../assets/${choice.choiceImageUrl}`)} alt="" />
-                <h1>{choice.description}</h1>
-              </Link>
-
-            ))}
-          </div>
-        </div>
-      </CSSTransition>
+      <img className={styles.image} src={mimi010} alt="" />
+      <img className={styles.image} src={mimi011} alt="" />
+      <img className={styles.image} src={mimi012} alt="" />
+      <Link to="/stepthree">
+        <img className={styles.image} src={mimi013} alt="" />
+      </Link>
     </main>
   );
 }
