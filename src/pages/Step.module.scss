@@ -61,6 +61,34 @@
 }
 
 .image {
-    width: 72vw;
+    width: 72%;
     height: auto;
 }
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.intro {
+    background: url('../assets/intro_image.png');
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    a {
+        margin: auto;
+
+        img {
+            width: 40vw;
+            height: auto;
+        }
+    }
+}
+
+main {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+

@@ -11,7 +11,8 @@ import mimi005 from '../assets/mimi-005.png';
 import mimi006 from '../assets/mimi-006.png';
 import mimi007 from '../assets/mimi-007.png';
 import mimi008 from '../assets/mimi-008.png';
-import mimi009 from '../assets/mimi-009-select.png';
+import select9one from '../assets/select-9-1.png';
+import select9two from '../assets/select-9-2.png';
 
 function StepOne() {
   useEffect(() => {
@@ -28,9 +29,14 @@ function StepOne() {
       <img className={styles.image} src={mimi006} alt="" />
       <img className={styles.image} src={mimi007} alt="" />
       <img className={styles.image} src={mimi008} alt="" />
-      <Link to="/steptwo">
-        <img className={styles.image} src={mimi009} alt="" />
-      </Link>
+      <div style={{ display: 'flex', width: '80%', marginTop: '80px' }}>
+        <Link to="/steptwo">
+          <img className={styles.image} src={select9one} alt="" />
+        </Link>
+        <Link to="/steptwosecond">
+          <img className={styles.image} src={select9two} alt="" />
+        </Link>
+      </div>
     </main>
   );
 }

@@ -3,35 +3,30 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import styles from './Step.module.scss';
 
-import mimi010 from '../assets/mimi-010.png';
-import mimi011 from '../assets/mimi-011.png';
-import mimi012 from '../assets/mimi-012.png';
+import mimi026 from '../assets/mimi-026.png';
+import mimi027 from '../assets/mimi-027.png';
+import mimi028 from '../assets/mimi-028.png';
 import select21one from '../assets/select-21-1.png';
 import select21two from '../assets/select-21-2.png';
 
-function StepTwo() {
+function StepTwoSecond() {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
-
-  const saveHighstudentFriend = () => {
+  const saveHighstudent = () => {
     localStorage.setItem('ISHIGHSTUDENTFRIEND', 'true');
-  };
-
-  const saveHighstudentNotFriend = () => {
-    localStorage.setItem('ISHIGHSTUDENTFRIEND', 'false');
   };
   return (
     <main>
       <Header />
-      <img className={styles.image} src={mimi010} alt="" />
-      <img className={styles.image} src={mimi011} alt="" />
-      <img className={styles.image} src={mimi012} alt="" />
+      <img className={styles.image} src={mimi026} alt="" />
+      <img className={styles.image} src={mimi027} alt="" />
+      <img className={styles.image} src={mimi028} alt="" />
       <div style={{ display: 'flex', width: '80%', marginTop: '80px' }}>
-        <Link to="/stepthree" onClick={saveHighstudentFriend}>
+        <Link to="/stepthreethird" onClick={saveHighstudent}>
           <img className={styles.image} src={select21one} alt="" />
         </Link>
-        <Link to="/stepthreesecond" onClick={saveHighstudentNotFriend}>
+        <Link to="/stepthreefourth">
           <img className={styles.image} src={select21two} alt="" />
         </Link>
       </div>
@@ -39,4 +34,4 @@ function StepTwo() {
   );
 }
 
-export default StepTwo;
+export default StepTwoSecond;
